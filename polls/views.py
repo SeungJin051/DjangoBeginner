@@ -1,12 +1,9 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django.shortcuts import render
 
 def index(request):
-    # return HttpResponseRedirect('1')
-    return HttpResponseRedirect(
-        # reverse('detail', args=[1])
-        reverse('detail', kwargs={'question_id' : 1})
-    )
+    return render(request, 'polls/main.html')
 
 def detail(request, question_id):
     return HttpResponse("질문 %s." % question_id)
