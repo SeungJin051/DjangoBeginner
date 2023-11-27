@@ -23,3 +23,6 @@ urlpatterns = [
     path("polls/", include("polls.urls")),
     path("admin/", admin.site.urls),
 ]
+
+# 404 예외 페이지 만들어주기. 왜? -> 에러 디버그 로그들이 보여 해킹의 위험
+handler404 = 'mysite.views.error_404_view'

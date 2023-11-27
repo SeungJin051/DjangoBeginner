@@ -1,8 +1,8 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 def index(request):
-    return HttpResponse("Hello, polls")
+    return HttpResponseRedirect('1')
 
 def detail(request, question_id):
     return HttpResponse("질문 %s." % question_id)
