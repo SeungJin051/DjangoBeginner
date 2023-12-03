@@ -30,4 +30,16 @@ python manage.py runserver (포트번호)
 ```
 django-admin startapp (앱이름)
 ```
+
 프로젝트와 앱의 차이점은 무엇인가요? 앱은 블로그 시스템, 공공 기록 데이터베이스 또는 소규모 설문 조사 앱과 같은 작업을 수행하는 웹 애플리케이션입니다. 프로젝트는 특정 웹사이트에 대한 구성 및 앱의 모음입니다. 프로젝트에는 여러 앱이 포함될 수 있습니다. 앱은 여러 프로젝트에 있을 수 있습니다.
+
+# 1.
+<ul>
+  <li>urls - 사이트에 어디에 있는지 파싱을 하고 뷰에 연결하여 라우팅 역할 (path_converters, re_path)</li>
+  <li>views - What to Show, 비지니스 로직 (함수 베이스 뷰 -> 간단하지만 반복되는 코드가 많아짐, 클래스 베이스 뷰 -> 반복되는 코드가 적고, CRUD 효과적)</li>
+  <li>404 URL NOT FOUND - handler404 변수로 urls.py를 설정, 에러시 디버그 로그들이 모두 보여 해킹의 위험 -> DEBUG = False, ALLOWED_HOSTS=['*']</li>
+  <li>302 REDIRECT - 어떤 url에서 다른 url로 다시 바꾸는 것, HttpResponseRedirect(), </li>
+  <li>Reverse URL(더 알아보기) - path -> name은 템플릿 연결</li>
+</ul>
+
+Templates 템플릿 - Syntax는 Jinja2, Load HTML, CSS, JS
