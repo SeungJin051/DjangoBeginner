@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <h1>Hello Templates</h1>
-</body>
+  <body>
+    <h1>{{ greetings|lower }}</h1>
+    <h2>Iam from
+      {{ location.city }},
+      {{ location.country }}</h2>
+    <h2>I speacks
+      {{ languages.0 }}
+      and
+      {{ languages.1 }}</h2>
+    <ul>
+      {% for lang in languages %}
+        <li>{{ lang }}</li>
+      {% endfor %}
+      {% for lang in languages %}
+        <li>
+          {% if lang == "Korean" %}
+            Wow You speack korean
+          {% else %}
+            You speack English
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <h2>{{ctx}}</h2>
+    <ul>
+      {% for k, v in location.items %}
+        <li>{{ k|capfirst }}
+          :
+          {{ v }}</li>
+      {% endfor %}
+    </ul>
+  </body>
 
 </html>
